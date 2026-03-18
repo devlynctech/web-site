@@ -1,26 +1,128 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* ─────────────────────────────────────────
+   BASE THEME (LIGHT MODE)
+───────────────────────────────────────── */
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0d0806;
+
+  /* BRAND */
+  --color-orange: #ff6420;
+  --color-orange-light: #ffaa60;
+  --color-orange-glow: rgba(255, 100, 32, 0.1);
+  --color-orange-border: rgba(255, 100, 32, 0.2);
+
+  /* LIGHT MODE BACKGROUNDS */
+  --color-light: #ffffff;
+  --color-light-warm: #faf7f4;
+  --color-light-mid: #f0ebe4;
+  --color-light-muted: #e8e0d8;
+  --color-light-border: #e2d9d0;
+
+  /* LIGHT MODE TEXT */
+  --color-text-dark: #0d0806;
+  --color-text-muted: #4a3f38;
+  --color-gray-light: #9a9099;
 }
+
+/* ─────────────────────────────────────────
+   DARK MODE
+───────────────────────────────────────── */
+
+.dark {
+  --background: #0d0806;
+  --foreground: #f5ede4;
+
+  /* DARK BACKGROUNDS */
+  --color-dark: #0d0806;
+  --color-orange-light: #ffaa60;
+  --color-dark-mid: #1a0d04;
+  --color-dark-subtle: #0f0a07;
+  --color-dark-muted: #2a1f18;
+
+  /* DARK TEXT */
+  --color-offwhite: #f5ede4;
+  --color-gray: #888899;
+}
+
+/* ─────────────────────────────────────────
+   TAILWIND THEME EXTENSION
+───────────────────────────────────────── */
 
 @theme inline {
+  --breakpoint-md: 44.5rem;
+  --breakpoint-lg: 64.0625rem;
+  --breakpoint-xl: 70rem;
+  /* COLORS */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* BRAND */
+  --color-orange: #ff6420;
+  --color-orange-light: #ffaa60;
+  --color-orange-glow: rgba(255, 100, 32, 0.1);
+  --color-orange-border: rgba(255, 100, 32, 0.2);
+
+  /* DARK */
+  --color-dark: #0d0806;
+  --color-dark-mid: #1a0d04;
+  --color-dark-subtle: #0f0a07;
+  --color-dark-muted: #2a1f18;
+
+  --color-text-dark: #0d0806;
+  --color-text-muted: #4a3f38;
+
+  --color-gray-light: #9a9099;
+  --color-gray: #888899;
+  --color-offwhite: #f5ede4;
+
+  /* LIGHT */
+  --color-light: #ffffff;
+  --color-light-warm: #faf7f4;
+  --color-light-mid: #f0ebe4;
+  --color-light-muted: #e8e0d8;
+  --color-light-border: #e2d9d0;
+
+  /* TEXT */
+  --color-text-dark: #0d0806;
+  --color-text-muted: #4a3f38;
+
+  /* FONTS */
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* BORDER RADIUS */
+
+  --radius-pill: 100px;
+  --radius-card: 16px;
+  --radius-card2: 20px;
+  --radius-icon: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─────────────────────────────────────────
+   GLOBAL BODY
+───────────────────────────────────────── */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+@keyframes floatSmooth {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: floatSmooth 6s ease-in-out infinite;
 }
