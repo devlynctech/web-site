@@ -2,7 +2,7 @@
 
 export default function ComingSoon() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-light-warm dark:bg-dark px-4">
+        <div className="min-h-screen overflow-hidden flex items-center justify-center bg-light-warm dark:bg-dark px-4">
 
             <div className="text-center max-w-2xl w-full">
 
