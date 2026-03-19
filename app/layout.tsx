@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import { ThemeProvider } from "./components/providers/ThemeProvider";
 import { Syne, DM_Sans } from "next/font/google";
 import ComingSoon from "./components/system/ComingSoon";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 const isMaintenance = process.env.NEXT_PUBLIC_SITE_STATUS === "maintenance";
 
@@ -34,20 +35,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${dmSans.variable} antialiased`}
+        className={`
+          ${syne.variable} ${dmSans.variable}
+          antialiased
+          bg-light-warm dark:bg-dark
+        `}
       >
-
         <ThemeProvider>
           {isMaintenance ? (
-            <ComingSoon />
+            <main className="h-dvh overflow-hidden">
+              <ComingSoon />
+            </main>
           ) : (
             <>
               <Header />
-              <main>{children}</main>
+              <main className="border-l border-orange">{children}</main>
               <Footer />
+              <ScrollToTop />
             </>
           )}
-
         </ThemeProvider>
       </body>
     </html>
