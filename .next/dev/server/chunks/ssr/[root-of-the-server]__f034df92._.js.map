@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/rootsinc/Desktop/Proyectos%20Fron/landing-devlync/app/page.tsx"],"sourcesContent":["import Banner from \"@/components/sections/Banner\";\nimport Services from \"@/components/sections/Services\";\nimport HowWeWork from \"@/components/sections/HowWeWork\";\nimport Models from \"@/components/sections/Models\";\nimport WhyNearshore from \"@/components/sections/WhyNearshore\";\nimport Contact from \"@/components/sections/Contact\";\n\nexport default function Home() {\n  return (\n    <>\n      <Banner />\n      <Services />\n      <HowWeWork />\n      <Models />\n      <WhyNearshore />\n      <Contact />\n    </>\n  );\n}"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAOe,SAAS;IACtB,qBACE;;0BACE,mcAAC;;;;;0BACD,mcAAC;;;;;0BACD,mcAAC;;;;;0BACD,mcAAC;;;;;0BACD,mcAAC;;;;;0BACD,mcAAC;;;;;;;AAGP"}}]
-}
