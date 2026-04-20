@@ -4,7 +4,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex flex-col justify-end bg-white overflow-hidden"
+            className="relative min-h-[calc(100vh-90px)] flex flex-col justify-end bg-white overflow-hidden"
         >
 
 
