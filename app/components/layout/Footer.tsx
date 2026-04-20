@@ -1,163 +1,181 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { useTheme } from "../providers/ThemeProvider";
+import Image from "next/image"
 
 export default function Footer() {
-    const { theme } = useTheme();
-
     return (
-        <footer className="bg-light-warm dark:bg-dark border-t border-light-border dark:border-dark-muted">
+        <footer className="bg-white border-t border-gray-2">
 
-            <div className="px-[24px] xl:px-[60px] py-16 grid md:grid-cols-4 gap-10">
+            {/* MAIN FOOTER */}
 
-                <div>
-                    <Image
-                        src={theme === "dark" ? "/images/logo-dark.png" : "/images/logo-light.png"}
-                        alt="Devlync"
-                        width={180}
-                        height={80}
-                    />
+            <div className="max-w-[1280px] mx-auto px-[1.6rem] md:px-[3rem] py-[5rem] md:py-[7rem]">
 
-                    <p className="mt-4 text-sm text-text-muted dark:text-gray-light max-w-xs leading-relaxed">
-                        Nearshore tech partner for companies in the USA and Europe.
-                        Senior talent from El Salvador, CST timezone, built to ship.
-                    </p>
-                </div>
+                <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-                <div>
-                    <p className="text-xs tracking-[0.2em] uppercase mb-4 text-text-dark dark:text-offwhite">
-                        Services
-                    </p>
+                    <div className="space-y-6">
 
-                    <ul className="space-y-3 text-sm text-text-muted dark:text-gray-light">
+                        <Image
+                            src="/images/Logo.png"
+                            alt="Devlync"
+                            width={160}
+                            height={40}
+                        />
 
-                        <li>
-                            <a href="#services" className="hover:text-orange transition">
+                        <p className="text-body-sm text-gray-3 max-w-[280px] leading-[1.75]">
+                            Senior nearshore engineers helping US and European teams build
+                            scalable products faster — fully integrated with your team and
+                            timezone.
+                        </p>
+
+                    </div>
+
+
+                    <div className="space-y-5">
+
+                        <div className="font-mono text-mono-xs uppercase tracking-[.16em] text-gray-3">
+                            Services
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+
+                            <a
+                                href="#services"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
                                 Web Development
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#services" className="hover:text-orange transition">
-                                Mobile Apps
+                            <a
+                                href="#services"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                Mobile Development
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#services" className="hover:text-orange transition">
+                            <a
+                                href="#services"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
                                 Staff Augmentation
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#services" className="hover:text-orange transition">
-                                Backend / APIs
+                            <a
+                                href="#services"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                DevOps & Infrastructure
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#services" className="hover:text-orange transition">
-                                DevOps & Cloud
+                        </div>
+
+                    </div>
+
+
+                    <div className="space-y-5">
+
+                        <div className="font-mono text-mono-xs uppercase tracking-[.16em] text-gray-3">
+                            Company
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+
+                            <a
+                                href="#process"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                How we work
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#services" className="hover:text-orange transition">
-                                AI Integration
+                            <a
+                                href="#why"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                Why Devlync
                             </a>
-                        </li>
 
-                    </ul>
-                </div>
-
-                <div>
-                    <p className="text-xs tracking-[0.2em] uppercase mb-4 text-text-dark dark:text-offwhite">
-                        Company
-                    </p>
-
-                    <ul className="space-y-3 text-sm text-text-muted dark:text-gray-light">
-
-                        <li>
-                            <a href="#why-nearshore" className="hover:text-orange transition">
-                                About Us
+                            <a
+                                href="#models"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                Engagement models
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#models" className="hover:text-orange transition">
-                                Our Team
+                            <a
+                                href="#contact"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                Contact
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#how-we-work" className="hover:text-orange transition">
-                                Case Studies
-                            </a>
-                        </li>
+                        </div>
 
-                        {/* <li>
-                            <a href="#how-we-work" className="hver:text-orange transition">
-                                Blog
-                            </a>
-                        </li> */}
+                    </div>
 
-                        <li>
-                            <a href="#contact" className="hover:text-orange transition">
-                                Careers
-                            </a>
-                        </li>
 
-                    </ul>
-                </div>
+                    <div className="space-y-5">
 
-                <div>
-                    <p className="text-xs tracking-[0.2em] uppercase mb-4 text-text-dark dark:text-offwhite">
-                        Contact
-                    </p>
+                        <div className="font-mono text-mono-xs uppercase tracking-[.16em] text-gray-3">
+                            Contact
+                        </div>
 
-                    <ul className="space-y-3 text-sm text-text-muted dark:text-gray-light">
+                        <div className="flex flex-col gap-3 text-body-sm text-gray-3">
 
-                        <li>
-                            <a href="mailto:hello@devlync.com" className="hover:text-orange transition">
+                            <a
+                                href="mailto:hello@devlync.com"
+                                className="hover:text-ink transition"
+                            >
                                 hello@devlync.com
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#" className="hover:text-orange transition">
-                                LinkedIn
+                            <div>
+                                San Salvador <br />
+                                El Salvador
+                            </div>
+
+                            <a
+                                href="#contact"
+                                className="text-orange hover:text-orange-dark transition"
+                            >
+                                Start a project →
                             </a>
-                        </li>
 
-                        <li>
-                            <a href="#" className="hover:text-orange transition">
-                                Twitter / X
-                            </a>
-                        </li>
+                        </div>
 
-                        <li>
-                            <span>San Salvador, SV</span>
-                        </li>
+                    </div>
 
-                    </ul>
                 </div>
 
             </div>
 
-            <div className="border-t border-light-border dark:border-dark-muted px-[24px] xl:px-[60px] py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-muted dark:text-gray-light">
 
-                <p>
-                    © {new Date().getFullYear()} Devlync Tech Company. All rights reserved.
-                </p>
+            <div className="bg-gray-1">
 
-                <p>
-                    El Salvador · Nearshore · Built with{" "}
-                    <span className="text-orange">♥</span>
-                </p>
+                <div className="max-w-[1280px] mx-auto px-[1.6rem] md:px-[3rem] py-6">
+
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+
+                        <div className="font-mono text-[.62rem] tracking-[.08em] text-gray-3">
+                            © {new Date().getFullYear()} Devlync. All rights reserved.
+                        </div>
+
+                        <div className="flex items-center gap-6 text-body-xs text-gray-3">
+
+                            <a href="#" className="hover:text-ink transition">
+                                Privacy
+                            </a>
+
+                            <a href="#" className="hover:text-ink transition">
+                                Terms
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </footer>
-    );
+    )
 }

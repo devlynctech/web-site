@@ -1,79 +1,122 @@
-"use client";
-
-import { ArrowRight } from "lucide-react";
+"use client"
 
 export default function Contact() {
     return (
-        <section id="contact" className="relative py-10 md:py-32 overflow-hidden bg-dark">
+        <section
+            id="contact"
+            className="relative bg-ink text-white py-20 md:py-40 overflow-hidden"
+        >
 
-            <div className="
-  absolute inset-0
-  bg-[radial-gradient(circle_at_50%_60%,rgba(255,100,32,0.25),transparent_40%)]
-  opacity-50
-"/>
+            <div
+                className="
+        absolute
+        right-[-3rem]
+        bottom-[-3rem]
+        text-[min(28vw,380px)]
+        font-extrabold
+        leading-none
+        text-transparent
+        pointer-events-none
+        select-none
+        [-webkit-text-stroke:1px_rgba(255,255,255,0.03)]
+      "
+            >
+                SHIP
+            </div>
 
-            <div className="relative z-10 px-4 md:px-[24px] xl:px-[60px] text-center max-w-3xl mx-auto">
+            <div className="max-w-[1280px] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-24 items-center">
 
-                <h2 className="
-          font-display font-extrabold
-          text-[clamp(2rem,6vw,4rem)]
-          leading-[1]
-          tracking-[-0.04em]
-          text-offwhite
-        ">
-                    Ready to build
-                    <br />
-                    <span className="text-orange">
-                        something great?
-                    </span>
-                </h2>
+                <div className="reveal">
 
-                <p className="
-          mt-6
-          text-gray
-          text-base md:text-lg
-          max-w-xl mx-auto
-        ">
-                    Tell us about your project — we’ll get back within 24 hours
-                    with a concrete proposal.
-                </p>
+                    <div className="flex items-center gap-2 font-mono text-mono-sm uppercase tracking-[0.14em] text-orange mb-6">
+                        <span className="opacity-50">//</span>
+                        Start a project
+                    </div>
 
-                <div className="mt-10 flex justify-center">
-                    <a
-                        href="mailto:hello@devlync.com"
-                        className="
-              inline-flex items-center gap-2
-              bg-orange text-white
-              px-6 py-3
-              rounded-full
-              font-medium
-              transition-all duration-300
-              hover:bg-orange-light
-              hover:scale-105
-              shadow-[0_10px_40px_rgba(255,100,32,0.35)]
-            "
-                    >
-                        Get in touch
+                    <h2 className="font-sans font-bold text-display leading-[0.95] tracking-[-0.05em]">
 
-                        <span className="transition-transform group-hover:translate-x-1">
-                            <ArrowRight size={18} />
+                        Ready to build
+                        <br />
+
+                        <span className="text-orange">
+                            something great?
                         </span>
-                    </a>
+
+                    </h2>
+
+                    <p className="text-body-md text-white/40 mt-6 max-w-[440px] leading-[1.75]">
+                        Tell us about your project — we'll respond within 24 hours with a
+                        concrete proposal.
+                    </p>
 
                 </div>
 
-                <p className="mt-4 text-sm text-gray-light">
-                    Or email us directly:
+                <div className="flex flex-col gap-4 reveal">
+
+                    <input
+                        type="email"
+                        placeholder="your@email.com"
+                        className="
+            bg-white/5
+            border border-white/10
+            px-6 py-4
+            text-body-md
+            outline-none
+            transition
+            focus:border-orange
+            placeholder:text-white/25
+          "
+                    />
+
+                    <input
+                        type="text"
+                        placeholder="Tell us about your project"
+                        className="
+            bg-white/5
+            border border-white/10
+            px-6 py-4
+            text-body-md
+            outline-none
+            transition
+            focus:border-orange
+            placeholder:text-white/25
+          "
+                    />
+
                     <a
-                        href="mailto:hello@devlync.com"
-                        className="text-orange ml-1 hover:underline"
+                        href="mailto:hello@devlynctech.com"
+                        className="
+            mt-2
+            flex
+            items-center
+            justify-center
+            gap-2
+            bg-orange
+            py-4
+            text-btn
+            font-semibold
+            transition
+            hover:bg-orange-dark
+            hover:-translate-y-[2px]
+          "
                     >
-                        hello@devlync.com
+                        Send message →
                     </a>
-                </p>
+
+                    <p className="text-center text-mono-sm text-white/20 font-mono mt-2">
+                        Or reach us at{" "}
+                        <a
+                            href="mailto:hello@devlynctech.com"
+                            className="text-orange hover:underline"
+                        >
+                            hello@devlynctech.com
+                        </a>
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
-    );
+    )
 }

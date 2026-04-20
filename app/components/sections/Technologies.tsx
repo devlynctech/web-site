@@ -1,74 +1,79 @@
-"use client";
+"use client"
 
 const techs = [
-    "React", "Node.js", "React Native", "Next.js", "TypeScript",
-    "Vue.js", "Python", "Flutter", "Go", "PostgreSQL",
-    "MongoDB", "GraphQL", "AWS", "GCP", "Docker",
-    "Kubernetes", "Terraform", "OpenAI API", "Stripe",
-    "Firebase", "Supabase", "Figma"
-];
+    { name: "React", hi: true },
+    { name: "Node.js", hi: true },
+    { name: "React Native", hi: true },
+    { name: "Next.js", hi: true },
+    { name: "TypeScript", hi: true },
+
+    { name: "Vue.js" },
+    // { name: "Python" },
+    // { name: "Flutter" },
+    // { name: "Go" },
+    // { name: "PostgreSQL" },
+    // { name: "MongoDB" },
+    // { name: "GraphQL" },
+
+    // { name: "AWS" },
+    // { name: "GCP" },
+    // { name: "Docker" },
+    // { name: "Kubernetes" },
+    // { name: "Terraform" },
+
+    // { name: "OpenAI API" },
+    // { name: "Stripe" },
+    // { name: "Firebase" },
+    // { name: "Supabase" },
+    // { name: "Figma" },
+]
 
 export default function Technologies() {
     return (
-        <section className="py-10 md:py-24 bg-light-border dark:bg-dark">
+        <section className="bg-gray-1 py-20 md:py-32">
 
-            <div className="px-4 md:px-[24px] xl:px-[60px]">
+            <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
 
-                <div className="mb-12">
+                <div className="reveal">
 
-                    <p className="text-xs tracking-[0.2em] text-orange uppercase mb-4 font-bold">
+                    <div className="flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-orange mb-6">
+                        <span className="opacity-50">//</span>
                         Technologies
-                    </p>
+                    </div>
 
-                    <h2 className="
-                                font-display
-                                font-extrabold
-                                text-[clamp(2rem,4vw,3.2rem)]
-                                leading-[1.05]
-                                tracking-[-0.03em]
-                                text-offwhite
-                                max-w-[620px] 
-                                text-text-dark dark:text-offwhite
-                                ">
+                    <h2 className="font-sans font-bold text-[clamp(2.2rem,4vw,3.8rem)] leading-[1] tracking-[-0.04em]">
                         We speak
-                        <span className="text-orange"> your</span>
                         <br />
-                        <span className="text-orange">stack.</span>
+                        <span className="text-orange">your stack.</span>
                     </h2>
 
                 </div>
 
-                {/* CHIPS */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 md:gap-3 mt-16 reveal-group">
 
-                    {techs.map((tech, i) => {
-                        const highlighted = i < 5;
+                    {techs.map((tech, i) => (
+                        <span
+                            key={i}
+                            className={`
+                                font-mono text-[0.65rem] uppercase tracking-[0.08em]
+                                px-4 py-2
+                                border border-gray-2
+                                transition-all duration-200
+                                cursor-default
 
-                        return (
-                            <span
-                                key={i}
-                                className={`
-                                    px-4 py-2 rounded-full text-sm
-                                    border transition-all duration-300
-                                    font-medium
-                                    cursor-pointer
-                                    ${highlighted
-                                        ? "border-orange text-orange dark:text-orange-light bg-orange/5 dark:bg-orange/20"
-                                        : "border-light-border dark:border-dark-muted text-text-muted dark:text-gray-light bg-light dark:bg-dark-subtle hover:border-orange hover:text-orange hover:dark:text-orange-light hover:bg-orange/5 hover:dark:bg-orange/20"
-                                    }
-
-                                    hover:border-orange hover:text-orange hover:bg-orange/10
-                                    `}
-                            >
-                                {tech}
-                            </span>
-                        );
-                    })}
+                                ${tech.hi
+                                    ? "bg-ink text-white border-ink"
+                                    : "bg-white text-gray-4 hover:bg-ink hover:text-white hover:border-ink"}
+                            `}
+                        >
+                            {tech.name}
+                        </span>
+                    ))}
 
                 </div>
 
             </div>
 
         </section>
-    );
+    )
 }

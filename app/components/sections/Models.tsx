@@ -1,130 +1,156 @@
-"use client";
+"use client"
 
 const models = [
     {
         tag: "Staff Augmentation",
-        title: "Embed a Developer",
-        desc: "One or more senior engineers join your team. You manage them directly within your tools and workflow.",
+        title: "Embed a Dev",
+        desc: "One or more senior engineers join your team. You manage them directly inside your tools and workflow.",
         features: [
             "From 1 to 10+ engineers",
             "Flexible monthly contract",
             "Full-time dedication",
-            "Direct communication",
-            "Your tools, your standup",
+            "Your standup, your tools",
         ],
-        highlight: false,
     },
     {
         tag: "Most Popular",
         title: "Dedicated Team",
-        desc: "A complete, managed development team: devs, QA, and PM. We handle delivery, you get results.",
+        desc: "A complete managed team: devs, QA, and PM. We handle delivery — you get results.",
+        featured: true,
         features: [
             "Full cross-functional team",
             "Sprint-based delivery",
             "Weekly demos & reports",
-            "Technical leadership included",
             "Scale anytime",
         ],
-        highlight: true,
     },
     {
         tag: "Project-Based",
         title: "Fixed Scope",
-        desc: "You have a well-defined project. We scope, estimate, build, and deliver at a fixed price and timeline.",
+        desc: "Well-defined project? We scope, estimate, build, and deliver — fixed price, fixed timeline.",
         features: [
             "Fixed price, no surprises",
-            "Discovery & architecture included",
-            "Milestone-based delivery",
-            "Post-launch support",
+            "Discovery included",
+            "Milestone delivery",
             "Full IP transfer",
         ],
-        highlight: false,
     },
-];
+]
 
 export default function Models() {
     return (
-        <section id="models" className="py-10 md:py-24 bg-light-warm dark:bg-dark">
+        <section id="models" className="bg-gray-1 py-20 md:py-32">
 
-            <div className="px-4 md:px-[24px] xl:px-[60px]">
+            <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
 
-                <div className="mb-16">
-                    <p className="text-xs tracking-[0.2em] text-orange uppercase mb-4 font-bold">
+                <div className="reveal">
+
+                    <div className="flex items-center gap-2 font-mono text-mono-sm uppercase tracking-[0.14em] text-orange mb-6">
+                        <span className="opacity-50">//</span>
                         Engagement
-                    </p>
+                    </div>
 
-                    <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,3.2rem)] leading-[1.05] tracking-[-0.03em] text-offwhite max-w-[620px] text-text-dark dark:text-offwhite
-                        ">
-                        Choose how
+                    <h2 className="font-sans font-bold text-h2 leading-[1] tracking-[-0.04em]">
+                        Choose how we
                         <br />
-                        we <span className="text-orange">work</span>
-                        <br />
-                        <span className="text-orange">together.</span>
+                        <span className="text-orange">work together.</span>
                     </h2>
+
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6 mt-16 reveal-group">
 
                     {models.map((model, i) => (
                         <div
                             key={i}
-                            className={`relative rounded-[24px] p-8 transition-all duration-300 border font-medium font-display
-                                ${model.highlight
-                                    ? "bg-orange text-white border-orange shadow-orange-heavy"
-                                    : "bg-light dark:bg-dark-subtle border-light-border dark:border-dark-muted"
+                            className={`
+                                p-6
+                                lg:p-10
+                                border border-gray-2
+                                transition
+                                relative
+                                ${model.featured
+                                    ? "bg-orange text-white border-orange shadow-[0_20px_50px_rgba(255,100,32,0.25)]"
+                                    : "bg-white hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
                                 }
-                            hover:-translate-y-1`}
+                            `}
                         >
 
-                            <p className={`text-xs tracking-[0.2em] uppercase mb-4 font-display
-                                ${model.highlight
-                                    ? "text-white/80"
-                                    : "text-orange"
-                                }
-                                `}>
+                            <div
+                                className={`
+                font-mono text-[0.6rem] uppercase tracking-[0.14em] mb-7
+                ${model.featured
+                                        ? "text-white/70"
+                                        : "text-gray-3"
+                                    }
+                `}
+                            >
                                 {model.tag}
-                            </p>
+                            </div>
 
-                            <h3 className={`font-extrabold text-[1.5rem] mb-3 font-display
-                                ${model.highlight
-                                    ? "text-white"
-                                    : "text-text-dark dark:text-offwhite"
-                                }
-                                `}>
+                            <div
+                                className={`
+                text-[1.5rem] font-bold tracking-[-0.03em] mb-3
+                ${model.featured
+                                        ? "text-white"
+                                        : "text-ink"
+                                    }
+                `}
+                            >
                                 {model.title}
-                            </h3>
+                            </div>
 
-                            <p className={`text-sm mb-6 max-w-md font-display
-                                    ${model.highlight
-                                    ? "text-white/90"
-                                    : "text-text-muted dark:text-gray-light"
-                                }
-                                `}>
+                            <p
+                                className={`
+                text-body-sm leading-[1.75] mb-8
+                ${model.featured
+                                        ? "text-white/80"
+                                        : "text-gray-3"
+                                    }
+                `}
+                            >
                                 {model.desc}
                             </p>
 
-                            <ul className="space-y-3">
+                            <ul className="flex flex-col gap-3">
+
                                 {model.features.map((f, idx) => (
                                     <li
                                         key={idx}
-                                        className={`text-sm flex items-start gap-2 font-display
-                                            ${model.highlight
+                                        className={`
+                    flex gap-3 text-[0.78rem] leading-[1.6]
+                    ${model.featured
                                                 ? "text-white/90"
-                                                : "text-text-muted dark:text-gray-light"
+                                                : "text-gray-4"
                                             }
-                                        `}
+                    `}
                                     >
-                                        <span className={`mt-[6px] w-1.5 h-1.5 rounded-full
-                                            ${model.highlight ? "bg-white" : "bg-orange"}
-                                            `} />
+                                        <span
+                                            className={`
+                      text-[0.7rem] mt-[2px]
+                      ${model.featured
+                                                    ? "text-white/70"
+                                                    : "text-orange"
+                                                }
+                      `}
+                                        >
+                                            →
+                                        </span>
+
                                         {f}
+
                                     </li>
                                 ))}
+
                             </ul>
+
                         </div>
                     ))}
+
                 </div>
+
             </div>
+
         </section>
-    );
+    )
 }

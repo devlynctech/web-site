@@ -1,24 +1,31 @@
-import Banner from "./components/sections/Banner";
+import RevealProvider from "./components/providers/RevealProvider";
 import Contact from "./components/sections/Contact";
-import HowWeWork from "./components/sections/HowWeWork";
+import Hero from "./components/sections/Hero";
 import Marquee from "./components/sections/Marquee";
 import Models from "./components/sections/Models";
-import ServicesSection from "./components/sections/services/ServicesSection";
+import Numbers from "./components/sections/Numbers";
+import Process from "./components/sections/Process";
+import Services from "./components/sections/Services";
 import Technologies from "./components/sections/Technologies";
-import WhyNearshore from "./components/sections/WhyNearshore";
+import Testimonials from "./components/sections/Testimonials";
+import Why from "./components/sections/Why";
 
 
 export default function Home() {
   return (
     <>
-      <Banner />
-      <Marquee />
-      <ServicesSection />
-      <HowWeWork />
-      <Technologies />
-      <WhyNearshore />
-      <Models />
-      <Contact />
+      <RevealProvider>
+        <Hero />
+        <Marquee />
+        <Services />
+        <Numbers />
+        <Process />
+        <Technologies />
+        <Why />
+        <Testimonials />
+        <Models />
+        <Contact />
+      </RevealProvider>
     </>
   );
 }

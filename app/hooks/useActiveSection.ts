@@ -1,35 +1,34 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
-export function useActiveSection(sectionIds: string[]) {
-    const [active, setActive] = useState<string>("");
+export default function useActiveSection(ids: string[]) {
+
+    const [active, setActive] = useState("")
 
     useEffect(() => {
-        const observers: IntersectionObserver[] = [];
 
-        sectionIds.forEach((id) => {
-            const el = document.getElementById(id);
-            if (!el) return;
+        const observer = new IntersectionObserver(
+            (entries) => {
 
-            const observer = new IntersectionObserver(
-                ([entry]) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        setActive(id);
+                        setActive(entry.target.id)
                     }
-                },
-                {
-                    rootMargin: "-40% 0px -50% 0px",
-                    threshold: 0.1,
-                }
-            );
+                })
 
-            observer.observe(el);
-            observers.push(observer);
-        });
+            },
+            { threshold: 0.5 }
+        )
 
-        return () => observers.forEach((o) => o.disconnect());
-    }, [sectionIds]);
+        ids.forEach(id => {
+            const el = document.getElementById(id)
+            if (el) observer.observe(el)
+        })
 
-    return active;
+        return () => observer.disconnect()
+
+    }, [ids])
+
+    return active
 }

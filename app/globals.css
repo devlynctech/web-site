@@ -1,199 +1,292 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-/* ─────────────────────────────────────────
-   BASE THEME (LIGHT MODE)
-───────────────────────────────────────── */
+
+/* ─────────────────────────────────────
+   DESIGN TOKENS
+──────────────────────────────────── */
 
 :root {
-  --background: #ffffff;
-  --foreground: #0d0806;
-
-  /* BRAND */
-  --color-orange: #ff6420;
-  --color-orange-light: #ffaa60;
-  --color-orange-glow: rgba(255, 100, 32, 0.1);
-  --color-orange-border: rgba(255, 100, 32, 0.2);
-
-  /* LIGHT MODE BACKGROUNDS */
-  --color-light: #ffffff;
-  --color-light-warm: #faf7f4;
-  --color-light-mid: #f0ebe4;
-  --color-light-muted: #e8e0d8;
-  --color-light-border: #e2d9d0;
-
-  /* LIGHT MODE TEXT */
-  --color-text-dark: #0d0806;
-  --color-text-muted: #4a3f38;
-  --color-gray-light: #9a9099;
-}
-
-/* ─────────────────────────────────────────
-   DARK MODE
-───────────────────────────────────────── */
-
-.dark {
-  --background: #0d0806;
-  --foreground: #f5ede4;
-
-  /* DARK BACKGROUNDS */
-  --color-dark: #0d0806;
-  --color-orange-light: #ffaa60;
-  --color-dark-mid: #1a0d04;
-  --color-dark-subtle: #0f0a07;
-  --color-dark-muted: #2a1f18;
-
-  /* DARK TEXT */
-  --color-offwhite: #f5ede4;
-  --color-gray: #888899;
-}
-
-/* ─────────────────────────────────────────
-   TAILWIND THEME EXTENSION
-───────────────────────────────────────── */
-
-@theme inline {
-  --breakpoint-md: 44.5rem;
-  --breakpoint-lg: 64.0625rem;
-  --breakpoint-xl: 70rem;
   /* COLORS */
+  --orange: #ff6420;
+  --orange-dark: #cc4e16;
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --ink: #0a0a0a;
+  --white: #ffffff;
 
-  /* BRAND */
-  --color-orange: #ff6420;
-  --color-orange-light: #ffaa60;
-  --color-orange-glow: rgba(255, 100, 32, 0.1);
-  --color-orange-border: rgba(255, 100, 32, 0.2);
-
-  /* DARK */
-  --color-dark: #0d0806;
-  --color-dark-mid: #1a0d04;
-  --color-dark-subtle: #0f0a07;
-  --color-dark-muted: #2a1f18;
-
-  --color-text-dark: #0d0806;
-  --color-text-muted: #4a3f38;
-
-  --color-gray-light: #9a9099;
-  --color-gray: #888899;
-  --color-offwhite: #f5ede4;
-
-  /* LIGHT */
-  --color-light: #ffffff;
-  --color-light-warm: #faf7f4;
-  --color-light-mid: #f0ebe4;
-  --color-light-muted: #e8e0d8;
-  --color-light-border: #e2d9d0;
-
-  /* TEXT */
-  --color-text-dark: #0d0806;
-  --color-text-muted: #4a3f38;
+  --gray-1: #f2f2f2;
+  --gray-2: #e4e4e4;
+  --gray-3: #aaaaaa;
+  --gray-4: #555555;
 
   /* FONTS */
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-mono);
 
-  --font-display: "Syne", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-
-  /* BORDER RADIUS */
-
-  --radius-pill: 100px;
-  --radius-card: 16px;
-  --radius-card2: 20px;
-  --radius-icon: 12px;
+  /* EASING */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ─────────────────────────────────────────
-   GLOBAL BODY
-───────────────────────────────────────── */
+/* ─────────────────────────────────────
+   TAILWIND THEME
+──────────────────────────────────── */
+
+@theme inline {
+  /* COLORS */
+  --color-orange: var(--orange);
+  --color-orange-dark: var(--orange-dark);
+
+  --color-ink: var(--ink);
+  --color-white: var(--white);
+
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+
+  /* FONTS */
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-mono);
+
+  /* FONT SIZES */
+
+  --text-h1: clamp(3.8rem, 8.5vw, 9.5rem);
+  --text-h2: clamp(2.2rem, 4vw, 3.8rem);
+  --text-display: clamp(3rem, 5vw, 5.5rem);
+
+  --text-stat: 2.6rem;
+
+  --text-body-lg: 1rem;
+  --text-body-md: 0.95rem;
+  --text-body-sm: 0.82rem;
+
+  --text-mono-sm: 0.65rem;
+  --text-mono-xs: 0.62rem;
+
+  --text-btn: 0.82rem;
+}
+
+/* ─────────────────────────────────────
+   BASE
+──────────────────────────────────── */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body);
+  font-family: var(--font-sora);
+  background: var(--white);
+  color: var(--ink);
+  cursor: none;
 }
 
-@keyframes floatSmooth {
+/* DOT */
+
+#cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* RING */
+
+#cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 100, 32, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s var(--ease-expo);
+}
+
+/* HOVER STATE */
+
+body.cursor-hovering #cursor-dot {
+  width: 56px;
+  height: 56px;
+  background: transparent;
+  border: 1.5px solid var(--orange);
+}
+
+/* ─────────────────────────────────────
+   ANIMATIONS
+──────────────────────────────────── */
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse {
   0%,
   100% {
-    transform: translateY(0px);
+    box-shadow: 0 0 0 0 rgba(255, 100, 32, 0.5);
   }
   50% {
-    transform: translateY(-12px);
+    box-shadow: 0 0 0 8px rgba(255, 100, 32, 0);
   }
-}
-
-.animate-float {
-  animation: floatSmooth 3s ease-in-out infinite;
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes orange-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 100, 32, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 100, 32, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 100, 32, 0);
+  }
+}
+
+.orange-pulse {
+  animation: orange-pulse 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* utilities */
+
+.animate-up {
+  animation: up 0.8s var(--ease-expo) both;
+}
+
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 24s linear infinite;
 }
 
-/* base */
-.nav-link {
-  @apply relative text-text-muted dark:text-gray text-sm transition;
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
-/* hover */
-.nav-link:hover {
-  @apply text-foreground;
+.animate-pulse-orange {
+  animation: pulse 2s infinite;
 }
 
-/* ACTIVE */
-.nav-active {
-  @apply text-foreground dark:text-offwhite;
+.animate-ping-orange {
+  animation: ping-orange 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
-/* underline animado */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #ff6420;
-  transition: width 0.3s ease;
+/* ─────────────────────────────────────
+   REVEAL SYSTEM
+──────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.75s var(--ease-expo),
+    transform 0.75s var(--ease-expo);
 }
 
-/* hover underline */
-.nav-link:hover::after {
-  width: 100%;
+.reveal.visible {
+  opacity: 1;
+  transform: none;
 }
 
-/* active underline */
-.nav-active::after {
-  width: 100%;
+.reveal-group > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.65s var(--ease-expo),
+    transform 0.65s var(--ease-expo);
 }
 
-.mobile-link {
-  @apply block px-4 py-3 rounded-xl transition;
-  @apply text-text-dark dark:text-offwhite;
+.reveal-group.visible > *:nth-child(1) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.05s;
+}
+.reveal-group.visible > *:nth-child(2) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.12s;
+}
+.reveal-group.visible > *:nth-child(3) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.19s;
+}
+.reveal-group.visible > *:nth-child(4) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.26s;
+}
+.reveal-group.visible > *:nth-child(5) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.33s;
+}
+.reveal-group.visible > *:nth-child(6) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.4s;
 }
 
-/* hover */
-.mobile-link:hover {
-  @apply bg-light-warm dark:bg-dark-mid;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-/* ACTIVE */
-.mobile-active {
-  @apply bg-orange/10 text-orange;
+.no-scrollbar {
+  scrollbar-width: none;
 }
 
-/* opcional: borde izquierdo elegante */
-.mobile-active {
-  border-left: 3px solid #ff6420;
-  padding-left: calc(1rem - 3px);
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge antiguo */
+}
+
+select {
+  cursor: none !important;
 }
