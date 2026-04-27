@@ -37,7 +37,7 @@ export default function Hero() {
                     <span className="w-[7px] h-[7px] rounded-full bg-orange animate-pulse-orange"></span>
 
                     <span className="font-mono text-mono-sm uppercase tracking-[.12em] text-gray-3">
-                        Software Developer · El Salvador · CST Timezone
+                        Software Developer · CST Timezone
                     </span>
 
                 </div>
