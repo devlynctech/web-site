@@ -8,24 +8,24 @@ const techs = [
     { name: "TypeScript", hi: true },
 
     { name: "Vue.js" },
-    // { name: "Python" },
-    // { name: "Flutter" },
-    // { name: "Go" },
-    // { name: "PostgreSQL" },
-    // { name: "MongoDB" },
-    // { name: "GraphQL" },
+    { name: "Python" },
+    { name: "Flutter" },
+    { name: "Go" },
+    { name: "PostgreSQL" },
+    { name: "MongoDB" },
+    { name: "GraphQL" },
 
-    // { name: "AWS" },
-    // { name: "GCP" },
-    // { name: "Docker" },
-    // { name: "Kubernetes" },
-    // { name: "Terraform" },
+    { name: "AWS" },
+    { name: "GCP" },
+    { name: "Docker" },
+    { name: "Kubernetes" },
+    { name: "Terraform" },
 
-    // { name: "OpenAI API" },
-    // { name: "Stripe" },
-    // { name: "Firebase" },
-    // { name: "Supabase" },
-    // { name: "Figma" },
+    { name: "OpenAI API" },
+    { name: "Stripe" },
+    { name: "Firebase" },
+    { name: "Supabase" },
+    { name: "Figma" },
 ]
 
 export default function Technologies() {
@@ -49,7 +49,7 @@ export default function Technologies() {
 
                 </div>
 
-                <div className="flex flex-wrap gap-2 md:gap-3 mt-16 reveal-group">
+                <div className="flex flex-wrap gap-2 md:gap-3 mt-16">
 
                     {techs.map((tech, i) => (
                         <span

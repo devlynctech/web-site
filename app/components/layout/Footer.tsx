@@ -1,5 +1,6 @@
 "use client"
 
+import { Heart } from "lucide-react"
 import Image from "next/image"
 
 export default function Footer() {
@@ -22,9 +23,7 @@ export default function Footer() {
                         />
 
                         <p className="text-body-sm text-gray-3 max-w-[280px] leading-[1.75]">
-                            Senior nearshore engineers helping US and European teams build
-                            scalable products faster — fully integrated with your team and
-                            timezone.
+                            Nearshore tech partner for the USA and Europe. Senior talent from El Salvador CST, built to ship
                         </p>
 
                     </div>
@@ -49,7 +48,7 @@ export default function Footer() {
                                 href="#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
-                                Mobile Development
+                                Mobile Apps
                             </a>
 
                             <a
@@ -63,7 +62,23 @@ export default function Footer() {
                                 href="#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
-                                DevOps & Infrastructure
+                                Backend / APIs
+                            </a>
+
+
+                            <a
+                                href="#services"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                DevOps & Cloud
+                            </a>
+
+
+                            <a
+                                href="#services"
+                                className="text-body-sm text-gray-3 hover:text-ink transition"
+                            >
+                                AI Integration
                             </a>
 
                         </div>
@@ -80,10 +95,10 @@ export default function Footer() {
                         <div className="flex flex-col gap-3">
 
                             <a
-                                href="#process"
+                                href="#home"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
-                                How we work
+                                About
                             </a>
 
                             <a
@@ -127,6 +142,21 @@ export default function Footer() {
                                 hello@devlync.com
                             </a>
 
+                            <a
+                                href="https://www.linkedin.com/company/devlync-tech-company/"
+                                className="hover:text-ink transition"
+                                target="_blank"
+                            >
+                                LinkedIn
+                            </a>
+
+                            {/* <a
+                                href="mailto:hello@devlync.com"
+                                className="hover:text-ink transition"
+                            >
+                                Twitter / X
+                            </a> */}
+
                             <div>
                                 San Salvador <br />
                                 El Salvador
@@ -155,19 +185,12 @@ export default function Footer() {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
 
                         <div className="font-mono text-[.62rem] tracking-[.08em] text-gray-3">
-                            © {new Date().getFullYear()} Devlync. All rights reserved.
+                            © {new Date().getFullYear()} Devlync Tech Company, S.A.S de C.V. — All rights reserved.
                         </div>
 
-                        <div className="flex items-center gap-6 text-body-xs text-gray-3">
-
-                            <a href="#" className="hover:text-ink transition">
-                                Privacy
-                            </a>
-
-                            <a href="#" className="hover:text-ink transition">
-                                Terms
-                            </a>
-
+                        <div className="flex items-center gap-6 text-[.62rem] tracking-[.08em] text-gray-3">
+                            El Salvador · Nearshore · Built with
+                            <Heart className="w-[12px] h-[12px] text-orange fill-orange" />
                         </div>
 
                     </div>

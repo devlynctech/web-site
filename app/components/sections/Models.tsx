@@ -15,7 +15,7 @@ const models = [
     {
         tag: "Most Popular",
         title: "Dedicated Team",
-        desc: "A complete managed team: devs, QA, and PM. We handle delivery — you get results.",
+        desc: "A complete managed team: devs, QA, and PM. We handle delivery you get results.",
         featured: true,
         features: [
             "Full cross-functional team",
@@ -27,7 +27,7 @@ const models = [
     {
         tag: "Project-Based",
         title: "Fixed Scope",
-        desc: "Well-defined project? We scope, estimate, build, and deliver — fixed price, fixed timeline.",
+        desc: "Well-defined project? We scope, estimate, build, and deliver fixed price, fixed timeline.",
         features: [
             "Fixed price, no surprises",
             "Discovery included",

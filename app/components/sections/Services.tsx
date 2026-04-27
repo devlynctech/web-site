@@ -4,7 +4,7 @@ const services = [
     {
         id: "01",
         title: "Web Development",
-        desc: "React, Vue, Next.js. From product MVPs to enterprise SaaS — performant, scalable, and built to last.",
+        desc: "React, Vue, Next.js. From product MVPs to enterprise SaaS performant, scalable, and built to last.",
     },
     {
         id: "02",
@@ -14,12 +14,12 @@ const services = [
     {
         id: "03",
         title: "Staff Augmentation",
-        desc: "Embed senior engineers inside your team in days — not months. No HR, no overhead, no risk.",
+        desc: "Embed senior engineers inside your team in days not months. No HR, no overhead, no risk.",
     },
     {
         id: "04",
         title: "Backend & APIs",
-        desc: "Scalable services and microservices. Node.js, Python, Go, PostgreSQL — architected for growth.",
+        desc: "Scalable services and microservices. Node.js, Python, Go, PostgreSQL architected for growth.",
     },
     {
         id: "05",

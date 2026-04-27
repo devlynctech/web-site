@@ -12,18 +12,20 @@ const testimonials = [
         role: "VP Product · SaaS Platform, New York",
     },
     {
-        text: "The quality was exceptional — clean, documented, reviewed. We've worked with offshore before. This is completely different.",
+        text: "The quality was exceptional clean, documented, reviewed. We've worked with offshore before. This is completely different.",
         name: "James Kim",
         role: "Engineering Lead · E-commerce, Chicago",
     },
     {
-        text: "Cost savings were real — but what surprised me was how much faster we moved. Devs that overlap all day changed everything.",
+        text: "Cost savings were real but what surprised me was how much faster we moved. Devs that overlap all day changed everything.",
         name: "Amanda Lowe",
         role: "CEO · Digital Agency, Miami",
     },
 ]
 
 export default function Testimonials() {
+    const items = [...testimonials, ...testimonials]
+
     return (
         <section className="bg-ink py-20 md:py-32 overflow-hidden">
 
@@ -41,50 +43,53 @@ export default function Testimonials() {
 
             </div>
 
-            <div
-                className="
-                flex gap-[2px]
-                overflow-x-auto
-                no-scrollbar
-                pr-12
-                lg:pl-[calc((100vw-1280px)/2+3rem)]
-                "
-            >
+            {/* SLIDER */}
+            <div className="overflow-hidden">
 
-                {testimonials.map((t, i) => (
-                    <div
-                        key={i}
-                        className="
-                        min-w-[520px]
-                        md:min-w-[620px]
-                        lg:min-w-[700px]
-                        bg-white/[0.03]
-                        border border-white/[0.06]
-                        p-12
-                        transition
-                        hover:border-orange
-                        hover:bg-orange/[0.04]
-                        "
-                    >
+                <div
+                    className="
+                    flex gap-[2px]
+                    animate-testimonials
+                    lg:pl-[calc((100vw-1280px)/2+3rem)]
+                    "
+                >
 
-                        <div className="font-mono text-[0.7rem] tracking-[0.3em] text-orange mb-8">
-                            ★ ★ ★ ★ ★
+                    {items.map((t, i) => (
+                        <div
+                            key={i}
+                            className="
+              min-w-[520px]
+              md:min-w-[620px]
+              lg:min-w-[700px]
+              bg-white/[0.03]
+              border border-white/[0.06]
+              p-12
+              transition
+              hover:border-orange
+              hover:bg-orange/[0.04]
+              "
+                        >
+
+                            <div className="font-mono text-[0.7rem] tracking-[0.3em] text-orange mb-8">
+                                ★ ★ ★ ★ ★
+                            </div>
+
+                            <p className="text-[0.95rem] leading-[1.75] text-white/70 mb-10">
+                                “{t.text}”
+                            </p>
+
+                            <div className="text-[0.82rem] font-semibold text-white">
+                                {t.name}
+                            </div>
+
+                            <div className="font-mono text-[0.65rem] tracking-[0.06em] text-white/25 mt-1">
+                                {t.role}
+                            </div>
+
                         </div>
+                    ))}
 
-                        <p className="text-[0.95rem] leading-[1.75] text-white/70 mb-10">
-                            “{t.text}”
-                        </p>
-
-                        <div className="text-[0.82rem] font-semibold text-white">
-                            {t.name}
-                        </div>
-
-                        <div className="font-mono text-[0.65rem] tracking-[0.06em] text-white/25 mt-1">
-                            {t.role}
-                        </div>
-
-                    </div>
-                ))}
+                </div>
 
             </div>
 

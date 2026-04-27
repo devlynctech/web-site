@@ -24,7 +24,7 @@ const reasons = [
     {
         id: "05 —",
         title: "Scale on Demand",
-        desc: "Add engineers this sprint, scale back next quarter. Flex with your roadmap — no long-term commitment.",
+        desc: "Add engineers this sprint, scale back next quarter. Flex with your roadmap no long-term commitment.",
     },
     {
         id: "06 —",

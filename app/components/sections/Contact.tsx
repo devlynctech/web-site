@@ -33,7 +33,7 @@ export default function Contact() {
                         Start a project
                     </div>
 
-                    <h2 className="font-sans font-bold text-display leading-[0.95] tracking-[-0.05em]">
+                    <h2 className="font-sans text-[clamp(2.2rem,4vw,3.8rem)] font-bold  leading-[1] tracking-[-0.04em]">
 
                         Ready to build
                         <br />
@@ -45,7 +45,7 @@ export default function Contact() {
                     </h2>
 
                     <p className="text-body-md text-white/40 mt-6 max-w-[440px] leading-[1.75]">
-                        Tell us about your project — we'll respond within 24 hours with a
+                        Tell us about your project we'll respond within 24 hours with a
                         concrete proposal.
                     </p>
 

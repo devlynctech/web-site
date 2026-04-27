@@ -37,15 +37,15 @@ export default function Header() {
 
                     <div className="flex items-center">
                         <Image
-                            src="/images/Logo.png"
+                            src={scrolled ? "/images/Icono principal.png" : "/images/Logo.png"}
                             alt="Devlync"
-                            width={160}
+                            width={scrolled ? 90 : 160}
                             height={40}
                             priority
                         />
                     </div>
 
-                    <nav className="hidden lg:flex justify-center items-center gap-10">
+                    <nav className="hidden lg:flex justify-center items-center gap-10 text-[12.5px] font-semibold">
 
                         <a
                             href="#services"
@@ -75,6 +75,17 @@ export default function Header() {
                                 }`}
                         >
                             Why Us
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            className={`text-nav-link transition ${active === "contact"
+                                ? "text-orange"
+                                : "text-gray-3 hover:text-ink"
+                                }`}
+                        >
+                            Contact
                         </a>
 
                     </nav>

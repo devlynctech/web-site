@@ -290,3 +290,37 @@ body.cursor-hovering #cursor-dot {
 select {
   cursor: none !important;
 }
+
+@keyframes testimonials {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-testimonials {
+  animation: testimonials 40s linear infinite;
+}
+
+@keyframes heroText {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero {
+  animation: heroText 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}

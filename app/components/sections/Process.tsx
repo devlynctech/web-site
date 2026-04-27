@@ -4,7 +4,7 @@ const steps = [
     {
         id: "01",
         title: "Discovery",
-        body: "We understand your project, stack, team, and goals. No templates — a real conversation about what you need.",
+        body: "We understand your project, stack, team, and goals. No templates a real conversation about what you need.",
     },
     {
         id: "02",
@@ -14,7 +14,7 @@ const steps = [
     {
         id: "03",
         title: "Integration",
-        body: "Your devs join Slack, standups, and sprints on day one. Real teammates — not a vendor sending updates.",
+        body: "Your devs join Slack, standups, and sprints on day one. Real teammates not a vendor sending updates.",
     },
     {
         id: "04",

@@ -1,5 +1,8 @@
 "use client"
 
+import HeroTitle from "./HeroTitle"
+
+
 export default function Hero() {
     return (
         <section
@@ -34,26 +37,12 @@ export default function Hero() {
                     <span className="w-[7px] h-[7px] rounded-full bg-orange animate-pulse-orange"></span>
 
                     <span className="font-mono text-mono-sm uppercase tracking-[.12em] text-gray-3">
-                        Nearshore · El Salvador · CST Timezone
+                        Software Developer · El Salvador · CST Timezone
                     </span>
 
                 </div>
 
-                <h1
-                    className="
-                        font-sans
-                        font-extrabold
-                        text-[clamp(2.6rem,8vw,9.5rem)]
-                        leading-[.9]
-                        tracking-tightest
-                        text-ink
-                        reveal
-                        "
-                >
-                    <span className="block">Senior devs.</span>
-                    <span className="block">Your timezone.</span>
-                    <span className="block text-orange">Day one.</span>
-                </h1>
+                <HeroTitle />
 
                 <div
                     className="
@@ -68,7 +57,7 @@ export default function Hero() {
 
                     <p className="lg:max-w-[440px] text-body-lg text-gray-4 font-light">
                         We embed senior Latin American engineers directly inside US and
-                        European teams — timezone-aligned, senior-only, and shipping from
+                        European teams timezone-aligned, senior-only, and shipping from
                         the first sprint.
                     </p>
 
@@ -132,7 +121,7 @@ export default function Hero() {
                             8<span className="text-orange">+</span>
                         </div>
                         <div className="font-mono text-mono-xs uppercase tracking-mono text-gray-3 mt-1">
-                            Years
+                            Yrs exp
                         </div>
                     </div>
 
