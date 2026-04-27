@@ -53,7 +53,7 @@ export default function Contact() {
 
                 <div className="flex flex-col gap-4 reveal">
 
-                    <input
+                    {/* <input
                         type="email"
                         placeholder="your@email.com"
                         className="
@@ -81,7 +81,7 @@ export default function Contact() {
             focus:border-orange
             placeholder:text-white/25
           "
-                    />
+                    /> */}
 
                     <a
                         href="mailto:hello@devlynctech.com"
