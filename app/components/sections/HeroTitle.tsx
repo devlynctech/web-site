@@ -34,7 +34,7 @@ export default function HeroTitle() {
             className="
     font-sans
     font-extrabold
-    text-[clamp(2.6rem,7vw,8.5rem)]
+    text-[clamp(2.6rem,7vw,6.5rem)]
     leading-[.9]
     tracking-tightest
     text-ink
