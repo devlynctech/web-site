@@ -157,10 +157,29 @@ export default function Footer() {
                                 Twitter / X
                             </a> */}
 
+
                             <div>
-                                San Salvador <br />
-                                El Salvador
+                                <span className="font-mono text-[0.6rem] tracking-[.12em] text-gray-3 uppercase">
+                                    San Antonio, USA
+                                </span>
+                                <div>1530 NW Crossroad</div>
                             </div>
+
+                            <div>
+                                <span className="font-mono text-[0.6rem] tracking-[.12em] text-gray-3 uppercase">
+                                    San Salvador, El Salvador
+                                </span>
+                                <div>World Trade Center</div>
+                                <div>87 Av. Norte & C. El Mirador</div>
+                            </div>
+
+                            <div>
+                                <span className="font-mono text-[0.6rem] tracking-[.12em] text-gray-3 uppercase">
+                                    Madrid, Spain
+                                </span>
+                                <div>Paseo de la Castellana</div>
+                            </div>
+
 
                             <a
                                 href="#contact"
@@ -189,7 +208,7 @@ export default function Footer() {
                         </div>
 
                         <div className="flex items-center gap-6 text-[.62rem] tracking-[.08em] text-gray-3">
-                            El Salvador · Nearshore · Built with
+                            Nearshore · Built with
                             <Heart className="w-[12px] h-[12px] text-orange fill-orange" />
                         </div>
 
