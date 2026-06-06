@@ -158,6 +158,7 @@ export default function Contact() {
                 </div>
 
                 <form
+                    noValidate
                     onSubmit={handleSubmit}
                     className="reveal grid gap-4 border border-white/10 bg-white/[0.03] p-5 md:p-7"
                 >
@@ -167,7 +168,6 @@ export default function Contact() {
                                 Name
                             </span>
                             <input
-                                required
                                 minLength={2}
                                 maxLength={80}
                                 value={form.name}
@@ -183,8 +183,8 @@ export default function Contact() {
                                 Work email
                             </span>
                             <input
-                                required
-                                type="email"
+                                type="text"
+                                inputMode="email"
                                 maxLength={120}
                                 value={form.email}
                                 onChange={(event) => updateField("email", event.target.value)}
@@ -230,7 +230,6 @@ export default function Contact() {
                             Project brief
                         </span>
                         <textarea
-                            required
                             minLength={20}
                             maxLength={2000}
                             value={form.project}
