@@ -2,6 +2,11 @@
   "name": "landing-devlync",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.9.0",
+  "engines": {
+    "node": "20.19.x",
+    "pnpm": "10.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

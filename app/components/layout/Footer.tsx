@@ -38,28 +38,28 @@ export default function Footer() {
                         <div className="flex flex-col gap-3">
 
                             <a
-                                href="#services"
+                                href="/#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Web Development
                             </a>
 
                             <a
-                                href="#services"
+                                href="/#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Mobile Apps
                             </a>
 
                             <a
-                                href="#services"
+                                href="/#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Staff Augmentation
                             </a>
 
                             <a
-                                href="#services"
+                                href="/#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Backend / APIs
@@ -67,7 +67,7 @@ export default function Footer() {
 
 
                             <a
-                                href="#services"
+                                href="/#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 DevOps & Cloud
@@ -75,7 +75,7 @@ export default function Footer() {
 
 
                             <a
-                                href="#services"
+                                href="/#services"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 AI Integration
@@ -95,28 +95,28 @@ export default function Footer() {
                         <div className="flex flex-col gap-3">
 
                             <a
-                                href="#home"
+                                href="/#home"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 About
                             </a>
 
                             <a
-                                href="#why"
+                                href="/#why"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Why Devlync
                             </a>
 
                             <a
-                                href="#models"
+                                href="/#models"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Engagement models
                             </a>
 
                             <a
-                                href="#contact"
+                                href="/#contact"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"
                             >
                                 Contact
@@ -136,10 +136,10 @@ export default function Footer() {
                         <div className="flex flex-col gap-3 text-body-sm text-gray-3">
 
                             <a
-                                href="mailto:hello@devlync.com"
+                                href="mailto:hello@devlynctech.com"
                                 className="hover:text-ink transition"
                             >
-                                hello@devlync.com
+                                hello@devlynctech.com
                             </a>
 
                             <a
@@ -149,14 +149,6 @@ export default function Footer() {
                             >
                                 LinkedIn
                             </a>
-
-                            {/* <a
-                                href="mailto:hello@devlync.com"
-                                className="hover:text-ink transition"
-                            >
-                                Twitter / X
-                            </a> */}
-
 
                             <div>
                                 <span className="font-mono text-[0.6rem] tracking-[.12em] text-gray-3 uppercase">
@@ -182,10 +174,17 @@ export default function Footer() {
 
 
                             <a
-                                href="#contact"
+                                href="/#contact"
                                 className="text-orange hover:text-orange-dark transition"
                             >
                                 Start a project →
+                            </a>
+
+                            <a
+                                href="/terminos-y-condiciones"
+                                className="text-gray-3 hover:text-ink transition"
+                            >
+                                Privacy Policy
                             </a>
 
                         </div>

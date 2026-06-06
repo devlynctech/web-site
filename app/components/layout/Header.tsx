@@ -48,7 +48,7 @@ export default function Header() {
                     <nav className="hidden lg:flex justify-center items-center gap-10 text-[12.5px] font-semibold">
 
                         <a
-                            href="#services"
+                            href="/#services"
                             className={`text-nav-link transition ${active === "services"
                                 ? "text-orange"
                                 : "text-gray-3 hover:text-ink"
@@ -58,7 +58,7 @@ export default function Header() {
                         </a>
 
                         <a
-                            href="#process"
+                            href="/#process"
                             className={`text-nav-link transition ${active === "process"
                                 ? "text-orange"
                                 : "text-gray-3 hover:text-ink"
@@ -68,7 +68,7 @@ export default function Header() {
                         </a>
 
                         <a
-                            href="#why"
+                            href="/#why"
                             className={`text-nav-link transition ${active === "why"
                                 ? "text-orange"
                                 : "text-gray-3 hover:text-ink"
@@ -79,7 +79,7 @@ export default function Header() {
 
 
                         <a
-                            href="#contact"
+                            href="/#contact"
                             className={`text-nav-link transition ${active === "contact"
                                 ? "text-orange"
                                 : "text-gray-3 hover:text-ink"
@@ -93,7 +93,7 @@ export default function Header() {
                     <div className="flex justify-end items-center">
                         <div className="flex justify-end items-center">
                             <a
-                                href="#contact"
+                                href="/#contact"
                                 className="hidden lg:inline-flex items-center bg-ink text-white px-6 py-2 text-btn font-semibold hover:bg-orange transition"
                             >
                                 Start a project
@@ -130,7 +130,7 @@ export default function Header() {
 
                 <a
                     onClick={() => setOpen(false)}
-                    href="#services"
+                    href="/#services"
                     className="text-[1.6rem] font-semibold"
                 >
                     Services
@@ -138,7 +138,7 @@ export default function Header() {
 
                 <a
                     onClick={() => setOpen(false)}
-                    href="#process"
+                    href="/#process"
                     className="text-[1.6rem] font-semibold"
                 >
                     Process
@@ -146,14 +146,14 @@ export default function Header() {
 
                 <a
                     onClick={() => setOpen(false)}
-                    href="#why"
+                    href="/#why"
                     className="text-[1.6rem] font-semibold"
                 >
                     Why Us
                 </a>
                 <a
                     onClick={() => setOpen(false)}
-                    href="#contact"
+                    href="/#contact"
                     className="mt-4 bg-ink text-white px-8 py-3 text-[1rem] font-semibold hover:bg-orange transition"
                 >
                     Start a project
