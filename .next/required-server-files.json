@@ -100,7 +100,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\wilbe\\devlync\\web-site",
+    "outputFileTracingRoot": "C:\\Users\\wilbe\\devlynctech\\web-site",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -293,11 +293,11 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "C:\\Users\\wilbe\\devlync\\web-site"
+      "root": "C:\\Users\\wilbe\\devlynctech\\web-site"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "C:\\Users\\wilbe\\devlync\\web-site",
+  "appDir": "C:\\Users\\wilbe\\devlynctech\\web-site",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",
