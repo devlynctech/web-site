@@ -23,7 +23,7 @@ const plexMono = IBM_Plex_Mono({
   weight: ["300", "400"],
   variable: "--font-mono"
 })
-
+ 
 export const metadata: Metadata = {
   metadataBase: new URL("https://devlynctech.com"),
 
