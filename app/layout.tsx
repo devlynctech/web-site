@@ -8,7 +8,7 @@ import ComingSoon from "./components/system/ComingSoon";
 import ScrollToTop from "./components/ui/ScrollToTop";
 import { Sora, IBM_Plex_Mono } from "next/font/google"
 import Cursor from "./components/ui/Cursor";
-
+import JsonLd from "./components/JsonLd/JsonLd";
 const isMaintenance = process.env.NEXT_PUBLIC_SITE_STATUS === "maintenance";
 
 
@@ -92,12 +92,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-K48PWKWT');`}
       </Script>
       <body
+      
         className={`
           ${sora.variable} ${plexMono.variable}
           antialiased
           bg-light-warm dark:bg-dark
         `}
       >
+        <JsonLd />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K48PWKWT"
@@ -121,24 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </>
           )}
         </ThemeProvider>
-        <Script
-  id="organization-schema"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Devlync Tech",
-      url: "https://devlynctech.com",
-      logo: "/logo.png",
-      description:
-        "Custom software, web development, and digital transformation solutions.",
-      sameAs: [
-        "https://www.linkedin.com/company/devlync-tech-company/"
-      ]
-    }),
-  }}
-/>
+      
       </body>
     </html>
   );

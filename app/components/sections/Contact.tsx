@@ -2,6 +2,9 @@
 
 import { FormEvent, useState } from "react"
 import { CheckCircle, LoaderCircle, Mail, Send } from "lucide-react"
+import RecaptchaScript from "@/app/components/RecaptchaScript";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
 
 type FormState = "idle" | "sending" | "success" | "error"
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -64,41 +67,68 @@ export default function Contact() {
 
         return ""
     }
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        const validationMessage = validateForm()
+        event.preventDefault();
+
+        const validationMessage = validateForm();
 
         if (validationMessage) {
-            setStatus("error")
-            setMessage(validationMessage)
-            return
+            setStatus("error");
+            setMessage(validationMessage);
+            return;
         }
 
-        setStatus("sending")
-        setMessage("")
+        const recaptchaToken = recaptchaRef.current?.getValue();
+
+        if (!recaptchaToken) {
+            setStatus("error");
+            setMessage("Please confirm that you are not a robot.");
+            return;
+        }
+
+        setStatus("sending");
+        setMessage("");
 
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
-            })
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ...form,
+                    recaptchaToken,
+                }),
+            });
 
-            const result = await response.json()
+            const result = await response.json();
 
             if (!response.ok) {
-                throw new Error(result.message || "We could not send your message.")
+                throw new Error(
+                    result.message || "We could not send your message."
+                );
             }
 
-            setForm(initialForm)
-            setStatus("success")
-            setMessage("Thanks. We received your message and will reply within 24 hours.")
+            setForm(initialForm);
+            setStatus("success");
+            setMessage(
+                "Thanks. We received your message and will reply within 24 hours."
+            );
+
         } catch (error) {
-            setStatus("error")
-            setMessage(error instanceof Error ? error.message : "We could not send your message.")
+            setStatus("error");
+            setMessage(
+                error instanceof Error
+                    ? error.message
+                    : "We could not send your message."
+            );
+        } finally {
+            recaptchaRef.current?.reset();
         }
-    }
+    };
+
 
     return (
         <section
@@ -157,6 +187,7 @@ export default function Contact() {
                     </div>
                 </div>
 
+                <RecaptchaScript />
                 <form
                     noValidate
                     onSubmit={handleSubmit}
@@ -239,7 +270,13 @@ export default function Contact() {
                             placeholder="What do you want to build, improve, or launch?"
                         />
                     </label>
-
+                    <div className="flex justify-center my-4">
+                        <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                            theme="dark"
+                        />
+                    </div>
                     <button
                         type="submit"
                         disabled={status === "sending"}
@@ -258,9 +295,8 @@ export default function Contact() {
                     {message && (
                         <p
                             role={status === "error" ? "alert" : "status"}
-                            className={`text-center text-body-sm ${
-                                status === "error" ? "text-orange" : "text-white/55"
-                            }`}
+                            className={`text-center text-body-sm ${status === "error" ? "text-orange" : "text-white/55"
+                                }`}
                         >
                             {message}
                         </p>

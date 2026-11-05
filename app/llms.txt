@@ -1,0 +1,33 @@
+# Devlync Tech Company
+
+> Devlync is a nearshore software development partner connecting US and European businesses with senior Latin American engineers. Its services include web and mobile development, staff augmentation, backend engineering, DevOps, cloud infrastructure, and AI integration, with a focus on timezone-aligned collaboration and scalable delivery.
+
+Devlync works with client teams through staff augmentation, dedicated teams, and fixed-scope projects. Its delivery approach emphasizes senior engineers, transparent agile workflows, and close collaboration during US working hours. Its principal engineering hub is in El Salvador.
+
+## Main Website
+
+- [Devlync Home](https://devlynctech.com/): Company overview, services, technologies, process, engagement models, and contact information.
+- [Services](https://devlynctech.com/#services): Web and mobile engineering, staff augmentation, backend APIs, DevOps, cloud, and AI integration.
+- [Development Process](https://devlynctech.com/#process): Discovery, team matching, integration, and ongoing delivery.
+- [Why Devlync](https://devlynctech.com/#why-us): Nearshore collaboration, senior engineering talent, flexibility, and transparency.
+- [Engagement Models](https://devlynctech.com/#engagement): Staff augmentation, dedicated teams, and fixed-scope projects.
+- [Contact / Start a Project](https://devlynctech.com/#contact): Submit a project brief and contact the company.
+
+## Core Services
+
+- [Web Development](https://devlynctech.com/#services): Web applications, SaaS products, and modern frontend engineering using React, Vue, and Next.js.
+- [Mobile Application Development](https://devlynctech.com/#services): Cross-platform iOS and Android apps using React Native and Flutter.
+- [Staff Augmentation](https://devlynctech.com/#engagement): Senior engineers integrated into existing client teams and workflows.
+- [Backend Development and APIs](https://devlynctech.com/#services): Scalable backend systems, APIs, and microservices.
+- [DevOps and Cloud](https://devlynctech.com/#services): CI/CD, cloud infrastructure, containerization, and deployment workflows.
+- [AI Integration](https://devlynctech.com/#services): AI integrations, automation pipelines, and intelligent workflows.
+
+## Company Information
+
+- [About Devlync](https://devlynctech.com/#about): Nearshore engineering partner with a Latin American talent base.
+- [Technologies](https://devlynctech.com/#technologies): Technical stack and development tools.
+
+## Optional
+
+- [Privacy Policy](https://devlynctech.com/terminos-y-condiciones): Website privacy and data-handling information.
+- [Expanded Company and Services Overview](https://devlynctech.com/llms-full.txt): Additional structured context about Devlync.

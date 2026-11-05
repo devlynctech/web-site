@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://devlynctech.com/#organization",
+      "name": "Devlync",
+      "legalName": "Devlync Tech Company, S.A.S de C.V.",
+      "url": "https://devlynctech.com/",
+      "description": "Nearshore software development partner providing senior Latin American engineers for US and European teams, with expertise in web and mobile development, backend engineering, DevOps, cloud, and AI integration.",
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "United States"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
+      ],
+      "knowsAbout": [
+        "Nearshore software development",
+        "Staff augmentation",
+        "Web development",
+        "Mobile application development",
+        "Backend engineering",
+        "DevOps",
+        "Cloud infrastructure",
+        "AI integration"
+      ],
+      "hasOfferCatalog": {
+        "@id": "https://devlynctech.com/#services"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://devlynctech.com/#website",
+      "url": "https://devlynctech.com/",
+      "name": "Devlync",
+      "publisher": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://devlynctech.com/#webpage",
+      "url": "https://devlynctech.com/",
+      "name": "Devlync - Tech Company",
+      "isPartOf": {
+        "@id": "https://devlynctech.com/#website"
+      },
+      "about": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://devlynctech.com/#services",
+      "name": "Devlync Services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Software Engineering",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://devlynctech.com/#web-development"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://devlynctech.com/#mobile-development"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://devlynctech.com/#backend-apis"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Teams and Infrastructure",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://devlynctech.com/#staff-augmentation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://devlynctech.com/#devops-cloud"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Artificial Intelligence",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://devlynctech.com/#ai-integration"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://devlynctech.com/#web-development",
+      "name": "Web Development",
+      "description": "Development of scalable websites, web applications, MVPs, and enterprise SaaS products.",
+      "provider": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "url": "https://devlynctech.com/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://devlynctech.com/#mobile-development",
+      "name": "Mobile Development",
+      "description": "Cross-platform mobile app development for iOS and Android using React Native and Flutter.",
+      "provider": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "url": "https://devlynctech.com/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://devlynctech.com/#staff-augmentation",
+      "name": "Staff Augmentation",
+      "description": "Senior Latin American software engineers embedded directly into client development teams.",
+      "provider": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "url": "https://devlynctech.com/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://devlynctech.com/#backend-apis",
+      "name": "Backend & APIs",
+      "description": "Backend engineering, scalable APIs, services, and microservices.",
+      "provider": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "url": "https://devlynctech.com/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://devlynctech.com/#devops-cloud",
+      "name": "DevOps & Cloud",
+      "description": "Cloud infrastructure, containers, and CI/CD implementation.",
+      "provider": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "url": "https://devlynctech.com/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://devlynctech.com/#ai-integration",
+      "name": "AI Integration",
+      "description": "AI integrations, workflow automation, and intelligent software pipelines.",
+      "provider": {
+        "@id": "https://devlynctech.com/#organization"
+      },
+      "url": "https://devlynctech.com/"
+    }
+  ]
+}

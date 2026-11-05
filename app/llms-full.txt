@@ -1,0 +1,119 @@
+# Devlync Tech Company — Extended Company and Services Overview
+
+> Devlync is a nearshore technology and software development partner serving organizations in the United States and Europe. It integrates senior Latin American engineers into client teams and delivers web, mobile, backend, cloud, and AI solutions.
+
+Official website: https://devlynctech.com/
+
+## Company Overview
+
+Devlync helps businesses build and scale digital products by providing software engineering talent and project delivery capabilities. Its primary engineering hub is in El Salvador, with a company presence listed in San Antonio, United States; San Salvador, El Salvador; and Madrid, Spain.
+
+The current website describes more than 50 delivered projects, more than eight years of operation, and a senior-only talent model. These are company-reported figures and may change over time.
+
+Devlync emphasizes Central Time (CST) working-hour alignment, communication with US-based teams, direct collaboration, and agile delivery. Its target clients include companies seeking product development, nearshore engineering capacity, or dedicated delivery teams.
+
+## Software Development Services
+
+### Web Development
+
+Devlync builds web applications, minimum viable products, and enterprise SaaS solutions. Technologies highlighted on the website include React, Vue.js, Next.js, and TypeScript. The emphasis is on performance, scalability, and maintainability.
+
+### Mobile Application Development
+
+Devlync develops cross-platform mobile applications for iOS and Android, with React Native and Flutter among its featured technologies.
+
+### Backend Engineering and APIs
+
+Backend capabilities include API development, scalable services, and microservice architectures. The website highlights Node.js, Python, Go, and PostgreSQL.
+
+### DevOps and Cloud Infrastructure
+
+Devlync supports CI/CD, cloud infrastructure, containerization, and deployment workflows. Technologies listed include AWS, Google Cloud, Docker, Kubernetes, and Terraform. The website also mentions Azure in its cloud service description.
+
+### AI Integration
+
+Devlync offers practical AI integrations, automation pipelines, and intelligent workflows. Technologies listed include the OpenAI API. AI integration is described as part of product and process delivery, rather than a standalone claim of AI model development.
+
+### Staff Augmentation
+
+Devlync embeds senior Latin American engineers into client teams. Engineers can participate in the client's existing tools, Slack communication, standups, and sprint workflows. The website describes flexible team sizing and monthly engagements.
+
+## Engagement Models
+
+### Staff Augmentation — Embed a Dev
+
+One or more senior engineers join an existing client team. The client manages work through its own tools and workflow. The website describes full-time dedication and flexible monthly contracts, with staffing from one to more than ten engineers.
+
+### Dedicated Team
+
+A managed cross-functional team can include developers, quality assurance, and project management. Delivery is organized around sprints, reporting, and recurring demonstrations.
+
+### Fixed-Scope Project
+
+For well-defined projects, Devlync offers discovery, estimates, milestone-based delivery, and fixed-price/fixed-timeline engagements. The website states that intellectual property is transferred upon delivery.
+
+## Delivery Process
+
+1. Discovery: Understand project requirements, technology stack, team structure, and business objectives.
+2. Team Matching: Select senior engineers for the specific engagement, with client interviews and approval.
+3. Integration: Engineers join the client's communication channels, standups, and development sprints.
+4. Ship and Scale: Deliver iteratively, report on progress, and adjust capacity as needed.
+
+## Nearshore Advantages
+
+- Timezone alignment: Central Time collaboration and overlapping US business hours.
+- Senior talent: The website describes engineers with at least five years of production experience.
+- Cost efficiency: The website advertises potential cost savings compared with other staffing approaches; actual savings depend on engagement and scope.
+- Transparent delivery: Daily standups, weekly demos, sprint metrics, and regular communication.
+- Flexible capacity: Increase or decrease engineering support as project needs change.
+- El Salvador engineering hub: A Latin American base for nearshore software delivery.
+
+## Technology Stack
+
+### Frontend and Web
+React, Next.js, Vue.js, TypeScript, JavaScript.
+
+### Mobile
+React Native, Flutter.
+
+### Backend and APIs
+Node.js, Python, Go, GraphQL.
+
+### Databases and Backend Platforms
+PostgreSQL, MongoDB, Firebase, Supabase.
+
+### Cloud, DevOps, and Infrastructure
+AWS, Google Cloud, Azure, Docker, Kubernetes, Terraform.
+
+### AI, Product, and Integrations
+OpenAI API, Stripe, Figma.
+
+These are technologies displayed or described on the currently published website, not a guarantee that every technology is available for every engagement.
+
+## Values and Collaboration
+
+Devlync emphasizes clear communication, transparency, long-term partnerships, scalable solutions, and collaboration across geographic locations. The company's materials also describe a focus on innovation, client growth, and responsive teamwork.
+
+## Geographic Presence
+
+The published website lists:
+
+- San Antonio, United States.
+- San Salvador, El Salvador.
+- Madrid, Spain.
+
+The engineering hub is described as being in El Salvador. Geographic presence should not be interpreted as a promise of on-site service in every location.
+
+## Contact and Project Inquiries
+
+- Website: https://devlynctech.com/
+- Start a project: https://devlynctech.com/#contact
+- Services: https://devlynctech.com/#services
+- Engagement models: https://devlynctech.com/#engagement
+- Privacy policy: https://devlynctech.com/terminos-y-condiciones
+
+## Source and Scope Notes
+
+This document summarizes the public website reviewed on November 4, 2026. Additional screenshots provided for preparation showed broader software, AI, and cybersecurity service lists; those offerings were not included as current confirmed services because they were not corroborated by the presently accessible website. Verify new service offerings and engagement details with Devlync before relying on them commercially.
+
+This text is informational and is not a contractual statement, security certification, service-level agreement, or guarantee of availability.
