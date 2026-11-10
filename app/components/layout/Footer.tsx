@@ -108,6 +108,8 @@ export default function Footer() {
                                 Why Devlync
                             </a>
 
+                            <a href="/faqs" className="text-body-sm text-gray-3 hover:text-ink transition">FAQs</a>
+                            <a href="/blog" className="text-body-sm text-gray-3 hover:text-ink transition">Blog</a>
                             <a
                                 href="/#models"
                                 className="text-body-sm text-gray-3 hover:text-ink transition"

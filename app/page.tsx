@@ -1,3 +1,4 @@
+import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 import RevealProvider from "./components/providers/RevealProvider";
 import Contact from "./components/sections/Contact";
 import Hero from "./components/sections/Hero";
@@ -10,6 +11,11 @@ import Technologies from "./components/sections/Technologies";
 import Testimonials from "./components/sections/Testimonials";
 import Why from "./components/sections/Why";
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://devlynctech.com/",
+  },
+};
 
 export default function Home() {
   return (
