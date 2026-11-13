@@ -9,6 +9,9 @@ import ScrollToTop from "./components/ui/ScrollToTop";
 import { Sora, IBM_Plex_Mono } from "next/font/google"
 import Cursor from "./components/ui/Cursor";
 import JsonLd from "./components/JsonLd/JsonLd";
+import { GoogleTagManager } from "@next/third-parties/google";
+
+
 const isMaintenance = process.env.NEXT_PUBLIC_SITE_STATUS === "maintenance";
 
 
@@ -31,10 +34,12 @@ export const metadata: Metadata = {
     google: "oIX_z5ec9afBN_RgwuUXq2JKWnIow8-fZ5lKe2oQfi0",
   },
   title: {
-    default: "Devlync - tech company",
+    default: "Software Development & Staff Augmentation | Devlync Tech",
     template: "%s | Devlync",
   },
   description: "Devlync Tech is a technology partner serving the U.S., Europe, and Central America. We specialize in custom software solutions, web development, mobile apps, staffing solutions, and digital transformation services.",
+  
+  
   keywords: [
     "Devlync",
     "Devlynctech",
@@ -61,7 +66,7 @@ export const metadata: Metadata = {
     "technology services",
   ],
   openGraph: {
-    title: "Devlync - tech company",
+    title: "Devlync Tech - Software Development & Staff Augmentation",
     description: "Custom software, web development, and digital solutions for growing businesses.",
     url: "https://devlynctech.com",
     siteName: "Devlync Tech",
@@ -84,13 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script id="google-tag-manager" strategy="beforeInteractive">
-        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K48PWKWT');`}
-      </Script>
+      
       <body
       
         className={`
@@ -99,6 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           bg-light-warm dark:bg-dark
         `}
       >
+         <GoogleTagManager gtmId="GTM-K48PWKWT" />
         <JsonLd />
         <noscript>
           <iframe
