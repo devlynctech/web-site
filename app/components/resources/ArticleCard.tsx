@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   type Article,
   articleDate,
+  articleCategory,
   mediaURL,
   readingTime,
 } from "@/app/lib/blog";
@@ -32,7 +33,7 @@ export default function ArticleCard({
       </div>
       <div className="article-card-body">
         <p className="resource-eyebrow">
-          {article.category}{" "}
+          {articleCategory(article)}{" "}
           <span> / {readingTime(article.content)} MIN READ</span>
         </p>
         <h2>{article.title}</h2>

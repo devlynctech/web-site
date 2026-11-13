@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import {
   getArticle,
   articleDate,
+  articleCategory,
+  articleCanonical,
   mediaURL,
   readingTime,
   usesDemoArticles,
@@ -16,20 +18,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await getArticle(slug);
   if (!a) return { title: "Article not found" };
-  const image = mediaURL(a.cover?.url);
+  const image = mediaURL(a.seo?.shareImage?.url) || mediaURL(a.cover?.url);
+  const title = a.seo?.metaTitle?.trim() || a.title;
+  const description = a.seo?.metaDescription?.trim() || a.excerpt;
+  const canonical = articleCanonical(a);
   return {
-    robots: usesDemoArticles ? { index: false, follow: true } : undefined,
-    title: a.title,
-    description: a.excerpt,
-    alternates: { canonical: "/blog/" + a.slug },
+    robots: usesDemoArticles || a.seo?.noIndex ? { index: false, follow: true } : undefined,
+    title,
+    description,
+    alternates: { canonical },
     openGraph: {
       type: "article",
-      title: a.title,
-      description: a.excerpt,
+      title,
+      description,
+      url: canonical,
       publishedTime: a.publishedAt,
       modifiedTime: a.updatedAt,
       authors: [a.author],
       ...(image ? { images: [image] } : {}),
+    },
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      title, description, ...(image ? { images: [image] } : {}),
     },
   };
 }
@@ -47,7 +57,7 @@ export default async function Article({ params }: Props) {
     dateModified: a.updatedAt,
     author: { "@type": "Person", name: a.author },
     publisher: { "@type": "Organization", name: "Devlync" },
-    mainEntityOfPage: "https://devlynctech.com/blog/" + a.slug,
+    mainEntityOfPage: articleCanonical(a),
     ...(cover ? { image: cover } : {}),
   };
   return (
@@ -56,7 +66,7 @@ export default async function Article({ params }: Props) {
         <header className="resource-hero">
           <div className="resource-wrap article-heading">
             <Link href="/blog" className="resource-eyebrow">
-              ← ALL INSIGHTS / {a.category}
+              ← ALL INSIGHTS / {articleCategory(a)}
             </Link>
             <h1>{a.title}</h1>
             <p>{a.excerpt}</p>

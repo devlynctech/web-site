@@ -4,7 +4,7 @@ import Link from "next/link";
 import PageIntro from "../components/resources/PageIntro";
 import ResourceCTA from "../components/resources/ResourceCTA";
 import ArticleCard from "../components/resources/ArticleCard";
-import { getArticles, usesDemoArticles } from "@/app/lib/blog";
+import { getArticles, getCategories, usesDemoArticles } from "../lib/blog";
 export const metadata: Metadata = {
   title: "Blog & insights",
   robots: usesDemoArticles ? { index: false, follow: true } : undefined,
@@ -12,15 +12,15 @@ export const metadata: Metadata = {
     "Perspectives on software engineering, nearshore collaboration, and building better digital products.",
   alternates: { canonical: "/blog" },
 };
-const categories = ["Engineering", "Product", "Nearshore", "Company"];
 export default async function Blog({
   searchParams,
 }: {
   searchParams: Promise<{ q?: string; category?: string; page?: string }>;
 }) {
   const params = await searchParams;
+  const categories = await getCategories();
   const q = (params.q || "").slice(0, 200);
-  const category = categories.includes(params.category || "")
+  const category = categories.some((c) => c.slug === params.category)
     ? params.category!
     : "";
   const page = Math.max(
@@ -46,13 +46,13 @@ export default async function Blog({
       <section className="resource-wrap resource-section">
         <div className="resource-tools">
           <nav aria-label="Article categories" className="blog-filters">
-            {["", ...categories].map((c) => (
+            {[{ documentId: "all", slug: "", name: "All articles" }, ...categories].map((c) => (
               <Link
-                key={c}
-                href={href(1, c)}
-                aria-current={c === category ? "page" : undefined}
+                key={c.documentId}
+                href={href(1, c.slug)}
+                aria-current={c.slug === category ? "page" : undefined}
               >
-                {c || "All articles"}
+                {c.name}
               </Link>
             ))}
           </nav>

@@ -2,7 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { demoArticles } from "./blog-demo";
 
-// Local 
+// Local mode is the default while the blog design is being reviewed.
 export const usesDemoArticles = process.env.BLOG_SOURCE !== "strapi";
 export type Block = {
   type: string;
@@ -24,12 +24,65 @@ export type Article = {
   slug: string;
   excerpt: string;
   category: string;
+  blogCategory?: Category | null;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    canonicalURL?: string;
+    noIndex?: boolean;
+    shareImage?: { url: string; alternativeText?: string };
+  } | null;
   author: string;
   content: Block[];
   publishedAt: string;
   updatedAt: string;
   cover?: { url: string; alternativeText?: string };
 };
+export type Category = { documentId: string; name: string; slug: string };
+export function articleCategory(article: Article) {
+  return article.blogCategory?.name || article.category || "Uncategorized";
+}
+export function articleCanonical(article: Article) {
+  const fallback = "https://devlynctech.com/blog/" + article.slug;
+  try {
+    const url = new URL(article.seo?.canonicalURL?.trim() || fallback);
+    return ["https:", "http:"].includes(url.protocol) ? url.href : fallback;
+  } catch {
+    return fallback;
+  }
+}
+export const getCategories = cache(async (): Promise<Category[]> => {
+  if (usesDemoArticles) {
+    return [...new Set(demoArticles.map((a) => a.category))].map((name) => ({
+      documentId: name, name, slug: name,
+    }));
+  }
+  if (!process.env.STRAPI_URL) return [];
+  const categories: Category[] = [];
+  try {
+    for (let page = 1; ; page++) {
+      const url = new URL("/api/categories", process.env.STRAPI_URL);
+      url.search = new URLSearchParams({
+        "sort[0]": "name:asc", "pagination[page]": String(page),
+        "pagination[pageSize]": "100",
+      }).toString();
+      const response = await fetch(url, {
+        headers: process.env.STRAPI_API_TOKEN
+          ? { Authorization: "Bearer " + process.env.STRAPI_API_TOKEN } : {},
+        next: { revalidate: 60 }, signal: AbortSignal.timeout(8000),
+      });
+      if (!response.ok) throw new Error("Category service unavailable");
+      const body = await response.json();
+      if (!Array.isArray(body.data)) throw new Error("Invalid categories");
+      categories.push(...body.data);
+      if (page >= (body.meta?.pagination?.pageCount || 1)) break;
+    }
+    return categories;
+  } catch {
+    console.error("Unable to load categories from Strapi.");
+    return [];
+  }
+});
 export type ArticleResult = {
   articles: Article[];
   total: number;
@@ -77,6 +130,8 @@ export const getArticles = cache(
       status: "published",
       "sort[0]": "publishedAt:desc",
       "populate[cover]": "true",
+      "populate[blogCategory]": "true",
+      "populate[seo][populate][shareImage]": "true",
       "pagination[page]": String(page),
       "pagination[pageSize]": "9",
     });
@@ -84,7 +139,7 @@ export const getArticles = cache(
       params.set("filters[$or][0][title][$containsi]", query);
       params.set("filters[$or][1][excerpt][$containsi]", query);
     }
-    if (category) params.set("filters[category][$eq]", category);
+    if (category) params.set("filters[blogCategory][slug][$eq]", category);
     if (slug) params.set("filters[slug][$eq]", slug);
     try {
       const url = new URL("/api/articles", process.env.STRAPI_URL);
