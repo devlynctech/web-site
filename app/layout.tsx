@@ -26,11 +26,11 @@ const plexMono = IBM_Plex_Mono({
   weight: ["300", "400"],
   variable: "--font-mono"
 })
- 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://devlynctech.com"),
 
-    verification: {
+  verification: {
     google: "oIX_z5ec9afBN_RgwuUXq2JKWnIow8-fZ5lKe2oQfi0",
   },
   title: {
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     template: "%s | Devlync",
   },
   description: "Devlync Tech is a technology partner serving the U.S., Europe, and Central America. We specialize in custom software solutions, web development, mobile apps, staffing solutions, and digital transformation services.",
-  
-  
+
+
   keywords: [
     "Devlync",
     "Devlynctech",
@@ -89,16 +89,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+      <head>
+        <script src="https://million-reps.com/mr.js" data-startup="devlync-tech-company"></script>
+      </head>
       <body
-      
+
         className={`
           ${sora.variable} ${plexMono.variable}
           antialiased
           bg-light-warm dark:bg-dark
         `}
       >
-         <GoogleTagManager gtmId="GTM-K48PWKWT" />
+        <GoogleTagManager gtmId="GTM-K48PWKWT" />
         <JsonLd />
         <noscript>
           <iframe
@@ -123,7 +125,7 @@ export default function RootLayout({
             </>
           )}
         </ThemeProvider>
-      
+
       </body>
     </html>
   );
